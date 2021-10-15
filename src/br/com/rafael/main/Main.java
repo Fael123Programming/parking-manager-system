@@ -23,8 +23,7 @@ public class Main {
                 "(4) Documentação", "(5) Voltar ao menu principal"}, parkingInfoMenu =
                 {"(1) Capacidade", "(2) Lotação", "(3) Voltar a configurações"};
         //----------------------------------------------------------------------
-        String vacIdent, opt, password = "java", carsParkingCapacity = "<undefined>",
-                motosParkingCapacity = "<undefined>";
+        String vacIdent, opt, password = "java", carsParkingCapacity = "<undefined>", motosParkingCapacity = "<undefined>";
         boolean controlVariable01 = true, controlVariable02 = true, controlVariable03 = true;
         while (true) {
             if (verifyUser(password)) {
@@ -441,9 +440,9 @@ public class Main {
     }
 
     public static boolean verifyUser(String password) {
-        Scanner input = new Scanner(System.in);
+        Scanner input = Input.getInstance();
         row(100);
-        System.out.printf("Digite a senha:");
+        System.out.print("Digite a senha: ");
         return input.nextLine().equals(password);
     }
 
@@ -497,8 +496,7 @@ public class Main {
         return chosen;
     }
 
-    public static void message(String msg, int sizeDashes,
-                               boolean showTopRow, boolean showBottomRow) {
+    public static void message(String msg, int sizeDashes, boolean showTopRow, boolean showBottomRow) {
         String dashes = "";
         while (dashes.length() <= sizeDashes) {
             dashes += "-";
@@ -524,4 +522,3 @@ public class Main {
         return str;
     }
 }
-
